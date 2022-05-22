@@ -1,0 +1,16 @@
+#!/bin/bash
+# bash script initialiser
+
+# initialise bash script
+# GNU Affero General Public License v3.0
+
+main() {
+	touch "$1"
+	echo "#!/bin/bash" > "$1"
+	echo -e "\nmain() {\n}\n\nmain" >> "$1"
+	chmod +x "$1"
+}
+
+main "$1"
+
+nvim "$1"
